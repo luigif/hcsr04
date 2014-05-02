@@ -22,7 +22,7 @@ Hardware configuration:
 	Make sure there is a 1Ko resistor between ECHO pin and your beaglebone
 	as input pins are 3.3V while sensor emits 5V
 	
-	![Schematic](hc-sr04.png?raw=true)
+![Schematic](hc-sr04.png?raw=true)
 
 ### To build:
 
