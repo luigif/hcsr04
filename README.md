@@ -10,7 +10,7 @@ Prerequisites:
 Hardware configuration:
 
 	* TRIGGER		P8_12 gpio1[12] GPIO44	out	pulldown		Mode: 7 
-	* ECHO			P8_11 gpio1[13] GPIO45	in		pulldown		Mode: 7 *** with R 1ko
+	* ECHO			P8_11 gpio1[13] GPIO45	in	pulldown		Mode: 7 *** with R 1ko
 	* GND			P9-1 o P9-2 GND
 	* VCC			P9-5 o P9-6 VDD_5V
 	
