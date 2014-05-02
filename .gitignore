@@ -6,8 +6,11 @@
 *.exe
 *.o
 *.so
+
+# PRU stuff
 *.dtbo
 *.bin
+hcsr04
  
 # Packages #
 ############
