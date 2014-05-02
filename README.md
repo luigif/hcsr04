@@ -2,10 +2,14 @@
 Beaglebone black PRU code to use HCSR-04 proximity sensor.
 ===
 
+There are many examples around with Beaglebone PRU code to use an HCSR-04 sonar sensor, but most are outdated, do not work or require older kernels. 
+This repository includes everything needed to obtain a working example and can be used as a template for more complex PRU code.
+
 Prerequisites:
 
 	* Beaglebone black with debian 3.8.13 bone47
 	* HCSR-04 sensor
+	* Dev tools (gcc, pasm, dtc, ecc.) that are already included in BBB latest images (if you miss them, please upgrade from http://beagleboard.org/latest-images/)
 
 Hardware configuration:
 
@@ -15,7 +19,7 @@ Hardware configuration:
 	* VCC			P9_5 or P9_6	VDD_5V
 	
 	Make sure there is a 1Ko resistor between ECHO pin and your beaglebone
-	as input pins are 3.3V while sensor emits 5V
+	as input pins are 3.3V while sensor emits 5V	
 
 ### To build:
 
