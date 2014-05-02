@@ -1,14 +1,14 @@
 
-Beaglebone black PRU code to use HCSR-04 proximity sensor.
+Beaglebone black PRU code to use HC-SR04 proximity sensor.
 ===
 
-There are many examples around with Beaglebone PRU code to use an HCSR-04 sonar sensor, but most are outdated, do not work or require older kernels. 
+There are many examples around with Beaglebone PRU code to use an HC-SR04 sonar sensor, but most are outdated, do not work or require older kernels. 
 This repository includes everything needed to obtain a working example and can be used as a template for more complex PRU code.
 
 Prerequisites:
 
 	* Beaglebone black with debian 3.8.13 bone47
-	* HCSR-04 sensor
+	* HC-SR04 sensor
 	* Dev tools (gcc, pasm, dtc, etc.) that are already included in BBB latest images.
 	  (If you miss them, please upgrade from http://beagleboard.org/latest-images/)
 
@@ -79,3 +79,6 @@ Hardware configuration:
 	 20: Distance = 181.06 cm
 	>> PRU Disabled.
 
+### Reference material
+
+	[HC-SR04 manual and datasheet](http://www.cytron.com.my/viewProduct.php?pcode=SN-HC-SR04&name=Ultrasonic%20Ranging%20Module)
