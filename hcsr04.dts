@@ -27,8 +27,8 @@
 						Bit 4: 1 - Pull up, 0 - Pull down
 						Bit 5: 1 - Input, 0 – Output
 					*/
-					0x030 0x07 /* P8_12 gpio1[12] GPIO 44 	out	pulldown		Mode: 7 */
-					0x034 0x27 /* P8_11 gpio1[13] GPIO 45	in		pulldown		Mode: 7 */
+					0x030 0x07 /* P8_12 gpio1[12] GPIO44 out pulldown Mode: 7 */
+					0x034 0x27 /* P8_11 gpio1[13] GPIO45 in pulldown Mode: 7 */
           >;
       };
     };

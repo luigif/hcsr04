@@ -10,7 +10,7 @@ Prerequisites:
 	* Beaglebone black with debian 3.8.13 bone47
 	* HCSR-04 sensor
 	* Dev tools (gcc, pasm, dtc, etc.) that are already included in BBB latest images.
-	(If you miss them, please upgrade from http://beagleboard.org/latest-images/)
+	  (If you miss them, please upgrade from http://beagleboard.org/latest-images/)
 
 Hardware configuration:
 
@@ -30,7 +30,7 @@ Hardware configuration:
 
 	make install
 	
-	Will copy device tree driver to /lib/firmware and add it to the cape manager
+	It will copy device tree driver to /lib/firmware and add it to the cape manager
 	
 ### To run
 

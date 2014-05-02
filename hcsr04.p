@@ -3,24 +3,24 @@
 .entrypoint START
 
 // Address of the io controller for GPIO1
-#define GPIO1							0x4804c000
+#define GPIO1 0x4804c000
 
 // Offset address for the output enable register of the gpio controller
-#define GPIO_OE						0x134
+#define GPIO_OE 0x134
 
 // Offset address for the data in/out register of the gpio controller
-#define GPIO_DATAIN				0x138
-#define GPIO_CLEARDATAOUT		0x190
-#define GPIO_SETDATAOUT		0x194
+#define GPIO_DATAIN 0x138
+#define GPIO_CLEARDATAOUT 0x190
+#define GPIO_SETDATAOUT 0x194
 
 // PRU interrupt for PRU0
-#define PRU0_ARM_INTERRUPT	19
+#define PRU0_ARM_INTERRUPT 19
 
 // gpio1[12] P8_12 gpio44 0x030
-#define BIT_TRIGGER					0x0C
+#define BIT_TRIGGER	 0x0C
 
 // gpio1[13] P8_11 gpio45 0x034
-#define BIT_ECHO						0x0D
+#define BIT_ECHO 0x0D
 
 START:
 
