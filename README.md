@@ -9,7 +9,8 @@ Prerequisites:
 
 	* Beaglebone black with debian 3.8.13 bone47
 	* HCSR-04 sensor
-	* Dev tools (gcc, pasm, dtc, ecc.) that are already included in BBB latest images (if you miss them, please upgrade from http://beagleboard.org/latest-images/)
+	* Dev tools (gcc, pasm, dtc, etc.) that are already included in BBB latest images.
+	(If you miss them, please upgrade from http://beagleboard.org/latest-images/)
 
 Hardware configuration:
 
