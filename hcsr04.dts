@@ -1,0 +1,55 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+  compatible = "ti,beaglebone", "ti,beaglebone-black";
+
+  /* identification */
+  part-number = "hcsr04";
+  version = "00A0";
+
+  exclusive-use =
+    "P8_12", "P8_11",
+    "GPIO44", "GPIO45";
+
+  fragment@0 {
+    target = <&am33xx_pinmux>;
+    __overlay__ {
+    pinctrl_hcsr04: pinctrl_hcsr04_pins {
+        pinctrl-single,pins = <
+					/*
+						Table of mux options:
+						Bit 0 \
+						Bit 1 |- Mode
+						Bit 2 /
+						Bit 3: 1 - Pull disabled, 0 - Pull enabled
+						
+						Bit 4: 1 - Pull up, 0 - Pull down
+						Bit 5: 1 - Input, 0 – Output
+					*/
+					0x030 0x07 /* P8_12 gpio1[12] GPIO 44 	out	pulldown		Mode: 7 */
+					0x034 0x27 /* P8_11 gpio1[13] GPIO 45	in		pulldown		Mode: 7 */
+          >;
+      };
+    };
+  };
+
+  fragment@1 {
+    target = <&ocp>;
+    __overlay__ {
+      test_helper: helper {
+        compatible = "bone-pinmux-helper";
+        pinctrl-names = "default";
+        pinctrl-0 = <&pinctrl_hcsr04>;
+        status = "okay";
+      };
+    };
+  };
+
+  fragment@2{
+  target = <&pruss>;
+    __overlay__ {
+      status = "okay";
+    };
+  };
+};
