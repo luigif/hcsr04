@@ -38,8 +38,10 @@ int main(void) {
 		prussdrv_pru_wait_event (PRU_EVTOUT_0);
 		prussdrv_pru_clear_event(PRU_EVTOUT_0, PRU0_ARM_INTERRUPT);
 		
-		// Print the distance received from the sonar (sound takes 58.77 microseconds to travel 1 cm at sea level in dry air)
-		printf("%3d: Distance = %.2f cm\n", i, (float) pruData[0] / 58.77);
+		// Print the distance received from the sonar
+		// At 20 degrees in dry air the speed of sound is 342.2 cm/sec
+		// so it takes 29.12 us to make 1 cm, i.e. 58.44 us for a roundtrip of 1 cm
+		printf("%3d: Distance = %.2f cm\n", i, (float) pruData[0] / 58.44);
 		sleep(1);
 	}
 
