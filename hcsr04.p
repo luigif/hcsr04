@@ -3,7 +3,7 @@
 .entrypoint START
 
 // Address of the io controller for GPIO1
-#define GPIO1 0x4804c000
+#define GPIO1 0x4804C000
 
 // Offset address for the output enable register of the gpio controller
 #define GPIO_OE 0x134
