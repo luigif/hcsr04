@@ -17,7 +17,7 @@
 #define PRU0_ARM_INTERRUPT 19
 
 // gpio1[12] P8_12 gpio44 0x030
-#define BIT_TRIGGER	 0x0C
+#define BIT_TRIGGER 0x0C
 
 // gpio1[13] P8_11 gpio45 0x034
 #define BIT_ECHO 0x0D
