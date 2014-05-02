@@ -52,7 +52,7 @@ Hardware configuration:
 	Pass 2 : 0 Error(s), 0 Warning(s)
 	Writing Code Image of 43 word(s)
 	
-	>> Compiling HCSR-04 example
+	>> Compiling HC-SR04 example
 	gcc -Wall -c -o hcsr04.o hcsr04.c
 	gcc -lpthread -lprussdrv -o hcsr04 hcsr04.o
 

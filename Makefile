@@ -14,7 +14,7 @@ hcsr04.bin: hcsr04.p
 	$(PRU_ASM) -b hcsr04.p
 
 hcsr04: hcsr04.c
-	@echo "\n>> Compiling HCSR-04 example"
+	@echo "\n>> Compiling HC-SR04 example"
 	$(CC) $(CFLAGS) -c -o hcsr04.o hcsr04.c
 	$(CC) -lpthread -lprussdrv -o hcsr04 hcsr04.o
 
