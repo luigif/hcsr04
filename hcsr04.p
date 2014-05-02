@@ -26,12 +26,12 @@ START:
 
 	// Clear the STANDBY_INIT bit in the SYSCFG register
 	// otherwise the PRU will not be able to write outside the PRU memory space
-	// and to the Beaglebone's pins
+	// and to the Beaglebone pins
 	LBCO r0, C4, 4, 4
 	CLR r0, r0, 4
 	SBCO r0, C4, 4, 4
 	
-	// Make constant 24 (c24) point to the beginning of PRU0's data ram
+	// Make constant 24 (c24) point to the beginning of PRU0 data ram
 	MOV r0, 0x00000000
 	MOV r1, 0x22020
 	SBBO r0, r1, 0, 4
