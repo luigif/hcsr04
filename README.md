@@ -31,7 +31,24 @@ Hardware configuration:
 
 	./hcsr04
 
-### Example output:
+### Example build output after running "make":
+
+	>> Compiling Driver
+	dtc -O dtb -o hcsr04-00A0.dtbo -b 0 -@ hcsr04.dts
+	
+	>> Generating PRU binary
+	pasm -b hcsr04.p
+	PRU Assembler Version 0.84
+	Copyright (C) 2005-2013 by Texas Instruments Inc.
+	Pass 2 : 0 Error(s), 0 Warning(s)
+	Writing Code Image of 43 word(s)
+	
+	>> Compiling HCSR-04 example
+	gcc -Wall -c -o hcsr04.o hcsr04.c
+	gcc -lpthread -lprussdrv -o hcsr04 hcsr04.o
+
+
+### Example output after running "./hcsr04":
 
 	>> Initializing PRU
 	>> Executing HCSR-04 code
