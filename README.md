@@ -22,21 +22,25 @@ Hardware configuration:
 	Make sure there is a 1Ko resistor between ECHO pin and your beaglebone
 	as input pins are 3.3V while sensor emits 5V
 
-### Schematic
+### Schematic:
 	
 ![Schematic](hc-sr04.png?raw=true)
+
+### To download the complete package to your Beaglebone Black
+
+	wget --no-check-certificate https://github.com/luigif/hcsr04/archive/master.tar.gz -O - | tar xz
 
 ### To build:
 
 	make
 	
-### To install:
+### To install driver:
 
 	make install
 	
 	It will copy device tree driver to /lib/firmware and add it to the cape manager
 	
-### To run
+### To run:
 
 	./hcsr04
 
@@ -83,7 +87,7 @@ Hardware configuration:
 	 20: Distance = 181.06 cm
 	>> PRU Disabled.
 
-### Reference material
+### Reference material:
 
 - [HC-SR04 manual and datasheet](http://www.cytron.com.my/viewProduct.php?pcode=SN-HC-SR04&name=Ultrasonic%20Ranging%20Module)
 - [TI PRU docs](http://processors.wiki.ti.com/index.php/Programmable_Realtime_Unit_Software_Development)
