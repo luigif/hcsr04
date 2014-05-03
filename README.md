@@ -26,12 +26,13 @@ Hardware configuration:
 	
 ![Schematic](hc-sr04.png?raw=true)
 
-### To download the complete package to your Beaglebone Black
+### To download the complete package to your Beaglebone Black:
 
 	wget --no-check-certificate https://github.com/luigif/hcsr04/archive/master.tar.gz -O - | tar xz
 
 ### To build:
-
+ 	
+ 	cd hcsr04-master
 	make
 	
 ### To install driver:
