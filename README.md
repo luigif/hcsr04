@@ -1,13 +1,13 @@
 
-Beaglebone black PRU code to use HC-SR04 proximity sensor.
+Beaglebone Black PRU code to use HC-SR04 proximity sensor.
 ===
 
-There are many examples around with Beaglebone PRU code to use an HC-SR04 sonar sensor, but most are outdated, do not work or require older kernels. 
+There are many examples around with Beaglebone PRU code to use an HC-SR04 sonar sensor, but most are outdated, do not work or require older beagles or older kernels. 
 This repository includes everything needed to obtain a working example and can be used as a template for more complex PRU code.
 
 Prerequisites:
 
-	* Beaglebone black with debian 3.8.13 bone47
+	* Beaglebone Black with debian 3.8.13 bone47
 	* HC-SR04 sensor
 	* Dev tools (gcc, pasm, dtc, etc.) that are already included in BBB latest images.
 	  (If you miss them, please upgrade from http://beagleboard.org/latest-images/)
@@ -15,11 +15,11 @@ Prerequisites:
 Hardware configuration:
 
 	* TRIGGER		P8_12 gpio1[12] GPIO44	out	pulldown		Mode: 7 
-	* ECHO			P8_11 gpio1[13] GPIO45	in	pulldown		Mode: 7 *** with R 1ko
+	* ECHO			P8_11 gpio1[13] GPIO45	in	pulldown		Mode: 7 *** with R 1KOhm
 	* GND			P9_1 or P9_2	GND
 	* VCC			P9_5 or P9_6	VDD_5V
 	
-	Make sure there is a 1Ko resistor between ECHO pin and your beaglebone
+	Make sure there is a 1KOhm resistor between ECHO pin and your beaglebone
 	as input pins are 3.3V while sensor emits 5V
 
 ### Schematic:
@@ -93,3 +93,4 @@ Hardware configuration:
 - [HC-SR04 manual and datasheet](http://www.cytron.com.my/viewProduct.php?pcode=SN-HC-SR04&name=Ultrasonic%20Ranging%20Module)
 - [TI PRU docs](http://processors.wiki.ti.com/index.php/Programmable_Realtime_Unit_Software_Development)
 - [Introduction to the BeagleBone Black Device Tree](https://learn.adafruit.com/introduction-to-the-beaglebone-black-device-tree/overview)
+- [Using a Beaglebone with an HC-SR04 sonar](http://teknoman117.wordpress.com/2013/04/30/using-a-beaglebone-with-an-hc-sr04-sonar/)

@@ -22,6 +22,10 @@
 // gpio1[13] P8_11 gpio45 0x034
 #define BIT_ECHO 0x0D
 
+#define delay r0
+#define roundtrip r4
+
+
 START:
 
 	// Clear the STANDBY_INIT bit in the SYSCFG register
@@ -52,10 +56,10 @@ TRIGGER:
 	SBBO r2, r3, 0, 4
 	
 	// Delay 10 microseconds (200 MHz / 2 instructions = 10 ns per loop, 10 us = 1000 loops) 
-	MOV r0, 1000
-TRIGGER_DELAY_10US:
-	SUB r0, r0, 1
-	QBNE TRIGGER_DELAY_10US, r0, 0
+	MOV delay, 1000
+TRIGGER_DELAY:
+	SUB delay, delay, 1
+	QBNE TRIGGER_DELAY, delay, 0
 	
 	// Set trigger pin to low
 	MOV r2, 1<<BIT_TRIGGER
@@ -69,19 +73,19 @@ WAIT_ECHO:
 	LBBO r2, r3, 0, 4
 	QBBC WAIT_ECHO, r2, BIT_ECHO
 	
-	// r4 measures the echo duration in microseconds, resolution is 1us
-	MOV r4, 0
+	// roundtrip measures the echo duration in microseconds, resolution is 1us
+	MOV roundtrip, 0
 
 SAMPLE_ECHO:
 
 	// Delay 1 microsecond (adjusted because it takes time to query the GPIO pin)
-	MOV r0, 76
-SAMPLE_ECHO_DELAY_1US:
-	SUB r0, r0, 1
-	QBNE SAMPLE_ECHO_DELAY_1US, r0, 0
+	MOV delay, 76
+SAMPLE_ECHO_DELAY:
+	SUB delay, delay, 1
+	QBNE SAMPLE_ECHO_DELAY, delay, 0
 	
-	// Add 1us to the counter
-	ADD r4, r4, 1
+	// Add 1us to the roundtrip counter
+	ADD roundtrip, roundtrip, 1
 	
 	// Read GPIO until BIT_ECHO goes low
 	LBBO r2, r3, 0, 4
@@ -89,16 +93,16 @@ SAMPLE_ECHO_DELAY_1US:
 
 	// Echo is complete
 	// Store the microsecond count in the PRU's data ram so C program can read it
-	SBCO r4, c24, 0, 4
+	SBCO roundtrip, c24, 0, 4
 	
 	// Trigger the PRU0 interrupt (C program gets the event)
 	MOV r31.b0, PRU0_ARM_INTERRUPT+16
 	
-	// Delay 33 milliseconds to allow sonar to stop resonating and for sound burst to decay in environment
-	MOV r0, 3300000
-RESET_DELAY_33MS:
-	SUB r0, r0, 1
-	QBNE RESET_DELAY_33MS, r0, 0
+	// Delay to allow sonar to stop resonating and sound burst to decay in environment
+	MOV delay, 3000000
+RESET_DELAY:
+	SUB delay, delay, 1
+	QBNE RESET_DELAY, delay, 0
 	
 	// Jump back to triggering the sonar
 	JMP TRIGGER
