@@ -45,9 +45,10 @@ Hardware configuration:
 
 	./hcsr04
 
-	Note: After a first successful "make install", before running the hcsr04 program, you can load the driver 
-	with the install-driver.sh script.
-	Depending on your needs, you can configure your operating system to run the install-driver.sh script at boot.
+	Note: After a first successful "make install", before running the hcsr04 program, 
+	you can load the driver with the install-driver.sh script.
+	Depending on your needs, you can configure your operating system to run the 
+	install-driver.sh script at boot.
 
 ### Example build output after running "make":
 
